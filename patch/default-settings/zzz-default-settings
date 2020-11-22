@@ -47,13 +47,11 @@ sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/autoreboot.lua
 sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/autopoweroff.lua
 sed -i 's/\"network\"/\"control\"/g' /usr/lib/lua/luci/controller/eqos.lua
 
-uci set minidlna.config.enabled='0'
-uci commit minidlna
-/etc/init.d/minidlna stop
+# uci set minidlna.config.enabled='0'
+# uci commit minidlna
 
 uci set vsftpd.@listen[0].enable4='0'
 uci commit vsftpd
-/etc/init.d/vsftpd stop
 
 ln -sf /sbin/ip /usr/bin/ip
 
