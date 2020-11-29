@@ -60,7 +60,7 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/diy/li
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
 
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
-git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-#cd package/diy/po2lmo
+#  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
+#  cd package/diy/po2lmo
 #  make && sudo make install
 ./scripts/feeds update -i
