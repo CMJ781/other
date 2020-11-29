@@ -25,7 +25,8 @@ git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 # svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
 # git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 # git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/diy/luci-app-passwall
-svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/diy/lienol
+# svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
+# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ package/diy/lienol
+git clone -b master https://github.com/xiaorouji/openwrt-passwall.git package/lienol
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 ./scripts/feeds update -i
