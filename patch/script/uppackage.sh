@@ -2,9 +2,9 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 rm -rf ./package/lean/luci-theme-argon
-rm -rf ./package/lean/trojan
-rm -rf ./package/lean/v2ray
-rm -rf ./package/lean/v2ray-plugin
+# rm -rf ./package/lean/trojan
+# rm -rf ./package/lean/v2ray
+# rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-theme-opentomcat
 
 rm -rf ./feeds/packages/net/smartdns
