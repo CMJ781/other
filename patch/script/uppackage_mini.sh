@@ -49,9 +49,9 @@ svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/etc/serverchan > ./package/diy/luci-app-serverchan/root/etc/config/serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
-# svn co https://github.com/siropboy/luci-app-vssr-plustrunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/diy/luci-app-passwall
-svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/diy/lienol
+# svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
+# svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ package/diy/lienol
+git clone -b master https://github.com/xiaorouji/openwrt-passwall.git package/lienol
 #sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
@@ -59,7 +59,7 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/diy/li
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
-git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-#cd package/diy/po2lmo
-#make && sudo make install
+#  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
+#  cd package/diy/po2lmo
+#  make && sudo make install
 ./scripts/feeds update -i
