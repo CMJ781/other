@@ -52,8 +52,8 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 # svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/ package/new/luci-app-vssr-plus
 # svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ package/diy/lienol
 git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
-sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
-sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+#sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+#sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
