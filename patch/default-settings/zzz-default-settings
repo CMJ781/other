@@ -19,9 +19,9 @@ uci commit dhcp
 #  uci set sfe.config.enabled='0'
 #  uci set sfe.config.bbr='1'
 #  uci commit sfe
-  uci set flowoffload.@flow[0].flow_offloading='1'
-  uci set flowoffload.@flow[0].bbr='1'
-  uci commit flowoffload
+uci set flowoffload.@flow[0].flow_offloading='0'
+uci set flowoffload.@flow[0].bbr='1'
+uci commit flowoffload
 #uci set network.wan.proto=pppoe
 uci set network.@globals[0].ula_prefix='dd48:56c7:1325::/48'
 uci set network.@wan[0].mtu=1400
@@ -67,8 +67,8 @@ sed -i '/openwrt_luci/ { s/snapshots/releases\/18.06.8/g; }'  /etc/opkg/distfeed
 sed -i '/REDIRECT --to-ports 53/d' /etc/firewall.user
 echo "iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
 echo "iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
-echo "ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
-echo "ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
+echo "# ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
+echo "# ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
 
 sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
