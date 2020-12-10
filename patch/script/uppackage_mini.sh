@@ -18,11 +18,11 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages
 rm -rf ./feeds/packages/net/https-dns-proxy
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 
-rm -rf ./package/diy/autocore
+#rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/diy/default-settings
-#rm -rf ./package/lean/autocore
+rm -rf ./package/lean/autocore
 #rm -rf ./package/lean/default-settings
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
