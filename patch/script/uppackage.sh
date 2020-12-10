@@ -2,9 +2,9 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 rm -rf ./package/lean/luci-theme-argon
-rm -rf ./package/lean/trojan
-rm -rf ./package/lean/v2ray
-rm -rf ./package/lean/v2ray-plugin
+#rm -rf ./package/lean/trojan
+#rm -rf ./package/lean/v2ray
+#rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-theme-opentomcat
 
 rm -rf ./feeds/packages/net/smartdns
@@ -24,12 +24,12 @@ sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\
 rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
-rm -rf ./package/diy/default-settings
+#rm -rf ./package/diy/default-settings
 #rm -rf ./package/lean/autocore
-#rm -rf ./package/lean/default-settings
+rm -rf ./package/lean/default-settings
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
+#curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
 curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
