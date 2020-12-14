@@ -1,12 +1,12 @@
 #!/bin/bash
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
-rm -rf ./package/lean/luci-theme-argon
-#rm -rf ./package/lean/trojan
-#rm -rf ./package/lean/v2ray
-#rm -rf ./package/lean/v2ray-plugin
+# rm -rf ./package/lean/luci-theme-argon
+# rm -rf ./package/lean/trojan
+# rm -rf ./package/lean/v2ray
+# rm -rf ./package/lean/v2ray-plugin
+# rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
-
 rm -rf ./feeds/packages/net/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
 rm -rf ./package/lean/luci-app-netdata
@@ -53,14 +53,17 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 # svn co https://github.com/siropboy/luci-app-vssr-plustrunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
 # svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
 # svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ package/diy/lienol
-git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall package/diy
 sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
-
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+rm -rf ./package/diy/trojan
+rm -rf ./package/diy/v2ray
+rm -rf ./package/diy/v2ray-plugin
+rm -rf ./package/diy/xray
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
