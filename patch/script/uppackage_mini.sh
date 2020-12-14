@@ -60,6 +60,10 @@ sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+rm -rf ./package/diy/trojan
+rm -rf ./package/diy/v2ray
+rm -rf ./package/diy/v2ray-plugin
+rm -rf ./package/diy/xray
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
