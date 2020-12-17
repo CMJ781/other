@@ -1,11 +1,11 @@
 #!/bin/bash
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
-# rm -rf ./package/lean/luci-theme-argon
-# rm -rf ./package/lean/trojan
-# rm -rf ./package/lean/v2ray
-# rm -rf ./package/lean/v2ray-plugin
-# rm -rf ./package/lean/xray
+rm -rf ./package/lean/luci-theme-argon
+rm -rf ./package/lean/trojan
+rm -rf ./package/lean/v2ray
+rm -rf ./package/lean/v2ray-plugin
+rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./feeds/packages/net/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
@@ -44,7 +44,7 @@ sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
-git clone https://github.com/xiaorouji/openwrt-passwall package/diy
+git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
@@ -60,10 +60,10 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
-rm -rf ./package/diy/trojan
-rm -rf ./package/diy/v2ray
-rm -rf ./package/diy/v2ray-plugin
-rm -rf ./package/diy/xray
+#  rm -rf ./package/diy1/trojan
+#  rm -rf ./package/diy1/v2ray
+#  rm -rf ./package/diy1/v2ray-plugin
+#  rm -rf ./package/diy1/xray
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
