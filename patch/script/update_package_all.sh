@@ -1,11 +1,11 @@
 #!/bin/bash
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
-# rm -rf ./package/lean/luci-theme-argon
-# rm -rf ./package/lean/trojan
-# rm -rf ./package/lean/v2ray
-# rm -rf ./package/lean/v2ray-plugin
-# rm -rf ./package/lean/xray
+rm -rf ./package/lean/luci-theme-argon
+rm -rf ./package/lean/trojan
+rm -rf ./package/lean/v2ray
+rm -rf ./package/lean/v2ray-plugin
+rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./feeds/packages/net/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
@@ -60,10 +60,10 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
-rm -rf ./package/diy1/trojan
-rm -rf ./package/diy1/v2ray
-rm -rf ./package/diy1/v2ray-plugin
-rm -rf ./package/diy1/xray
+# rm -rf ./package/diy1/trojan
+# rm -rf ./package/diy1/v2ray
+# rm -rf ./package/diy1/v2ray-plugin
+# rm -rf ./package/diy1/xray
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
