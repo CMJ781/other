@@ -45,6 +45,7 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
+sed -i '$a tls_enable = true' ./package/lean/luci-app-frpc/root/etc/config/frp
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
