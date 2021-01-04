@@ -7,7 +7,7 @@ rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
-echo '替换aria2'
+# echo '替换aria2'
 rm -rf feeds/luci/applications/luci-app-aria2 && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
 rm -rf feeds/packages/net/aria2 && \
@@ -15,13 +15,22 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/aria2 feeds/packages/n
 cp -Rf diy/hong0980/files/aria2/* feeds/packages/net/aria2/
 rm -rf feeds/packages/net/ariang && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ariang feeds/packages/net/ariang
-echo '替换transmission'
+# echo '替换transmission'
 rm -rf feeds/luci/applications/luci-app-transmission && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-transmission feeds/luci/applications/luci-app-transmission
 rm -rf feeds/packages/net/transmission && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission feeds/packages/net/transmission
 rm -rf feeds/packages/net/transmission-web-control && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission-web-control feeds/packages/net/transmission-web-control
+# echo 'qBittorrent'
+# rm -rf package/lean/luci-app-qbittorrent
+# rm -rf package/lean/qt5 #5.1.3
+# rm -rf package/lean/qBittorrent #4.2.3
+# rm -rf diy/ipk/qbittorrent #4.1.9
+# #rm -rf diy/ipk/qbittorrent/patches #4.2.5
+## rm -rf diy/ipk/qbittorrent #4.2.5
+# #rm -rf diy/ipk/qt5 #5.9.8
+# sed -i 's/+qbittorrent/+qbittorrent +python3/g' diy/ipk/luci-app-qbittorrent/Makefile
 echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns&& \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
