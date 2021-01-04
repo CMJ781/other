@@ -40,13 +40,24 @@ sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/fami
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P/g' include/image.mk
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
-echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Sirpdboy Ipv4P'" > ./package/base-files/files/etc/openwrt_release1
+#echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Sirpdboy Ipv4P'" > ./package/base-files/files/etc/openwrt_release1
+cp -f ./package/diy/banner ./package/base-files/files/etc/
+aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
+sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P by Sirpdboy/g" package/base-files/files/etc/openwrt_release
+echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 sed -i '$a tls_enable = true' ./package/lean/luci-app-frpc/root/etc/config/frp
-git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
-git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
+git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClashgit clone https://github.com/xiaorouji/openwrt-passwall package/diy1
+sed -i '$a\chdbits.co\n\www.cnscg.club\n\pt.btschool.club\n\et8.org\n\www.nicept.net\n\pthome.net\n\ourbits.club\n\pt.m-team.cc\n\hdsky.me\n\ccfbits.org' package/diy1/xiaorouji/luci-app-passwall/root/usr/share/passwall/rules/direct_host
+sed -i '$a\docker.com\n\docker.io' package/diy1/xiaorouji/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
+sed -i '/global_rules/a	option auto_update 1\n	option week_update 0\n	option time_update 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
+sed -i '/global_subscribe/a	option auto_update_subscribe 1\noption week_update_subscribe 7\noption time_update_subscribe 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
+
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd diy/luci-app-bandwidthd
+rm -rf package/lean/luci-app-baidupcs-web && \
+git clone https://github.com/garypang13/luci-app-baidupcs-web diy/luci-app-baidupcs-web
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
