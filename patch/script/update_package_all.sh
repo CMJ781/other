@@ -106,4 +106,10 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
+
+rm -rf package/lean/luci-app-dockerman
+rm -rf package/lean/luci-lib-docker
+rm -rf package/lean/luci-app-diskman
+rm -rf package/lean/parted
+
 ./scripts/feeds update -i
