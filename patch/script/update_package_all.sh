@@ -8,6 +8,9 @@ rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./feeds/packages/net/smartdns
+rm -rf ./feeds/packages/net/transmission-web-control
+rm -rf ./feeds/packages/net/transmission
+rm -rf ./feeds/luci/applications/luci-app-transmission
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
 rm -rf ./package/lean/luci-app-netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
