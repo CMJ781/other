@@ -77,4 +77,8 @@ rm -rf ./package/diy1/xray
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
+rm -rf package/diy/luci-app-dockerman
+rm -rf package/diy/luci-lib-docker
+rm -rf package/diy/parted
+
 ./scripts/feeds update -i
