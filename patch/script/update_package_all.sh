@@ -23,14 +23,14 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission feeds/pac
 rm -rf feeds/packages/net/transmission-web-control && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission-web-control feeds/packages/net/transmission-web-control
 # echo 'qBittorrent'
-# rm -rf package/lean/luci-app-qbittorrent
-# rm -rf package/lean/qt5 #5.1.3
-# rm -rf package/lean/qBittorrent #4.2.3
+rm -rf package/lean/luci-app-qbittorrent
+rm -rf package/lean/qt5 #5.1.3
+rm -rf package/lean/qBittorrent #4.2.3
 # rm -rf diy/ipk/qbittorrent #4.1.9
 # #rm -rf diy/ipk/qbittorrent/patches #4.2.5
 ## rm -rf diy/ipk/qbittorrent #4.2.5
 # #rm -rf diy/ipk/qt5 #5.9.8
-# sed -i 's/+qbittorrent/+qbittorrent +python3/g' diy/ipk/luci-app-qbittorrent/Makefile
+sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/diy/luci-app-qbittorrent/Makefile
 echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns&& \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
@@ -49,9 +49,9 @@ git clone https://github.com/garypang13/luci-app-baidupcs-web diy/luci-app-baidu
 #sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
 #rm -rf ./package/diy/autocore
+#rm -rf ./package/diy/default-settings
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
-#rm -rf ./package/diy/default-settings
 rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
@@ -86,12 +86,12 @@ sed -i '$a\docker.com\n\docker.io' package/diy1/xiaorouji/luci-app-passwall/root
 sed -i '/global_rules/a	option auto_update 1\n	option week_update 0\n	option time_update 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
 sed -i '/global_subscribe/a	option auto_update_subscribe 1\noption week_update_subscribe 7\noption time_update_subscribe 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
 
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd diy/luci-app-bandwidthd
+#git clone https://github.com/AlexZhuo/luci-app-bandwidthd /package/diy/luci-app-bandwidthd
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/etc/serverchan > ./package/diy/luci-app-serverchan/root/etc/config/serverchan
+# curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/etc/serverchan > ./package/diy/luci-app-serverchan/root/etc/config/serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
 # sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
@@ -107,9 +107,12 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 #  cd package/diy/po2lmo
 #  make && sudo make install
 
-rm -rf package/lean/luci-app-dockerman
-rm -rf package/lean/luci-lib-docker
-rm -rf package/lean/luci-app-diskman
-rm -rf package/lean/parted
+#  rm -rf package/lean/luci-app-dockerman
+#  rm -rf package/lean/luci-lib-docker
+#  rm -rf package/lean/luci-app-diskman
+#  rm -rf package/lean/parted
+rm -rf package/diy/luci-app-dockerman
+rm -rf package/diy/luci-lib-docker
+rm -rf package/diy/parted
 
 ./scripts/feeds update -i
