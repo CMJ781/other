@@ -26,10 +26,6 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission-web-contr
 rm -rf package/lean/luci-app-qbittorrent
 rm -rf package/lean/qt5 #5.1.3
 rm -rf package/lean/qBittorrent #4.2.3
-# rm -rf diy/ipk/qbittorrent #4.1.9
-# #rm -rf diy/ipk/qbittorrent/patches #4.2.5
-## rm -rf diy/ipk/qbittorrent #4.2.5
-# #rm -rf diy/ipk/qt5 #5.9.8
 sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/diy/luci-app-qbittorrent/Makefile
 # echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns
