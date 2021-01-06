@@ -36,7 +36,7 @@ sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-ap
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P-Mini/g' include/image.mk
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
-echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d)  Ipv4P Mini by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
+echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
 #sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
@@ -53,9 +53,9 @@ sed -i '$a\docker.com\n\docker.io' package/diy1/xiaorouji/luci-app-passwall/root
 sed -i '/global_rules/a	option auto_update 1\n	option week_update 0\n	option time_update 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
 sed -i '/global_subscribe/a	option auto_update_subscribe 1\noption week_update_subscribe 7\noption time_update_subscribe 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
 
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd diy/luci-app-bandwidthd
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd  package/diy/luci-app-bandwidthd
 rm -rf package/lean/luci-app-baidupcs-web && \
-git clone https://github.com/garypang13/luci-app-baidupcs-web diy/luci-app-baidupcs-web
+git clone https://github.com/garypang13/luci-app-baidupcs-web  package/lean/luci-app-baidupcs-web
 
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
@@ -68,7 +68,7 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
+git clone -b master https://github.com/vernesong/OpenClash.git package/diy/OpenClash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
