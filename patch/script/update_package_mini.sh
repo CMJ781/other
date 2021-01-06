@@ -43,7 +43,7 @@ echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Mini by Sirpdboy'" > ./
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
-sed -i '$a        option tls_enable ="true"' ./package/lean/luci-app-frpc/root/etc/config/frp
+echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
 #sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Mini by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Min by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
