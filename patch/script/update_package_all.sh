@@ -109,6 +109,5 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 #  rm -rf package/lean/parted
 rm -rf package/diy/luci-app-dockerman
 rm -rf package/diy/luci-lib-docker
-rm -rf package/diy/parted
 
 ./scripts/feeds update -i
