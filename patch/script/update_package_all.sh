@@ -69,7 +69,7 @@ echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by Sirpdboy'" > ./packa
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
-sed -i '$a        option tls_enable ="true"' ./package/lean/luci-app-frpc/root/etc/config/frp
+echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 sed -i '$a CONFIG_BINFMT_MISC=y' ./package/target/linux/x86/config-5.4
