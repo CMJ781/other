@@ -31,6 +31,11 @@ uci commit network
 rm -f /usr/lib/lua/luci/view/admin_status/index/ddns.htm
 #rm -f /usr/lib/lua/luci/view/admin_status/index/minidlna.htm
 sed -i '/coremark/d' /etc/crontabs/root
+#rm -f /usr/lib/lua/luci/view/admin_status/index/mwan.htm
+#rm -f /usr/lib/lua/luci/view/admin_status/index/upnp.htm
+#rm -f /usr/lib/lua/luci/view/admin_status/index/ddns.htm
+rm -f /usr/lib/lua/luci/view/admin_status/index/minidlna.htm
+sed -i '/coremark/d' /etc/crontabs/root
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aria2.lua
 sed -i 's/services/nas/g' /usr/lib/lua/luci/view/aria2/overview_status.htm
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/hd_idle.lua
@@ -47,6 +52,8 @@ sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/wol.lua
 sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/autoreboot.lua
 sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/autopoweroff.lua
 sed -i 's/\"network\"/\"control\"/g' /usr/lib/lua/luci/controller/eqos.lua
+sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/cpulimit.lua
+
 
 # uci set minidlna.config.enabled='0'
 # uci commit minidlna
@@ -60,7 +67,7 @@ sed -i 's#http://downloads.openwrt.org#https://mirrors.cloud.tencent.com/lede#g'
 sed -i '/openwrt_diy/d'   /etc/opkg/distfeeds.conf
 sed -i '/openwrt_helloworld/d'   /etc/opkg/distfeeds.conf
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
-sed -i 's/\"bootstrap\"/\"opentopd\"/g'  /etc/config/luci
+#sed -i 's/\"bootstrap\"/\"opentopd\"/g'  /etc/config/luci
 sed -i "s/# //g" /etc/opkg/distfeeds.conf
 
 sed -i '/openwrt_luci/ { s/snapshots/releases\/18.06.8/g; }'  /etc/opkg/distfeeds.conf
