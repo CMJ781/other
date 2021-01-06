@@ -7,6 +7,7 @@ rm -rf ./package/lean/luci-theme-argon
 #rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-theme-opentomcat
 
+rm -rf package/lean/luci-app-baidupcs-web 
 rm -rf ./feeds/packages/net/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
 rm -rf ./package/lean/luci-app-netdata
@@ -54,8 +55,6 @@ sed -i '/global_rules/a	option auto_update 1\n	option week_update 0\n	option tim
 sed -i '/global_subscribe/a	option auto_update_subscribe 1\noption week_update_subscribe 7\noption time_update_subscribe 5' package/diy1/xiaorouji/luci-app-passwall/root/etc/config/passwall
 
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd  package/diy/luci-app-bandwidthd
-rm -rf package/lean/luci-app-baidupcs-web && \
-git clone https://github.com/garypang13/luci-app-baidupcs-web  package/lean/luci-app-baidupcs-web
 
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
