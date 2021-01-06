@@ -105,6 +105,5 @@ rm -rf ./package/diy1/xray
 #  make && sudo make install
 rm -rf package/diy/luci-app-dockerman
 rm -rf package/diy/luci-lib-docker
-rm -rf package/diy/parted
 
 ./scripts/feeds update -i
