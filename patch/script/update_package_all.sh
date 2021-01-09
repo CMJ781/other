@@ -72,8 +72,8 @@ sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
-sed -i '$a CONFIG_BINFMT_MISC=y' ./package/target/linux/x86/config-5.4
-
+echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/x64/config-5.4
+echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
