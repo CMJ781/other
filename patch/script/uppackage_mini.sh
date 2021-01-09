@@ -67,7 +67,7 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-git clone -b master https://github.com/vernesong/OpenClash.git package/diy/OpenClash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
