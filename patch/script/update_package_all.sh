@@ -74,8 +74,8 @@ cp -f ./package/diy/banner ./package/base-files/files/etc/
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/x64/config-5.4
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
-git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
-
+#git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 sed -i '$a\chdbits.co\n\www.cnscg.club\n\pt.btschool.club\n\et8.org\n\www.nicept.net\n\pthome.net\n\ourbits.club\n\pt.m-team.cc\n\hdsky.me\n\ccfbits.org' package/diy1/xiaorouji/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 sed -i '$a\docker.com\n\docker.io' package/diy1/xiaorouji/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
