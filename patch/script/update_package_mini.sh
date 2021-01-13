@@ -39,7 +39,9 @@ sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-ap
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6-Mini/g' include/image.mk
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
+cp -f ./package/diy/banner ./package/base-files/files/etc/
 echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Mini by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
+sed -i 's/by/S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Mini by'"  ./package/base-files/files/etc/banner
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
@@ -47,7 +49,6 @@ echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/et
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
 #sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Mini by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 Min by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
-cp -f ./package/diy/banner ./package/base-files/files/etc/
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
