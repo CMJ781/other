@@ -12,7 +12,7 @@ rm -rf feeds/luci/applications/luci-app-aria2 && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
 rm -rf feeds/packages/net/aria2 && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/aria2 feeds/packages/net/aria2
-cp -Rf diy/hong0980/files/aria2/* feeds/packages/net/aria2/
+cp -Rf ./package/diy/aria2/* feeds/packages/net/aria2/
 rm -rf feeds/packages/net/ariang && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ariang feeds/packages/net/ariang
 # echo '替换transmission'
@@ -37,7 +37,7 @@ rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata ./feeds/packages/admin/netdata
 rm -rf ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
-rm -rf ./feeds/packages/net/https-dns-proxy
+#rm -rf ./feeds/packages/net/https-dns-proxy
 #svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 
 #修复核心及添加温度显示
