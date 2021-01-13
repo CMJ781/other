@@ -35,11 +35,11 @@ sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P-Mini/g' include/image.mk
-sed -i 's/by/S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by'"  ./package/base-files/files/etc/banner
+sed -i 's/by/Ipv4P Mini S$(TZ=UTC-8 date +%Y.%m.%d) by'  ./package/base-files/files/etc/banner
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
-echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
+echo "DISTRIB_REVISION='Ipv4P Mini S$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
-#sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by Sirpdboy/g" package/base-files/files/etc/openwrt_release
+#sed -i "Ipv4P Mini s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P Mini by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
