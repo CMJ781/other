@@ -61,8 +61,10 @@ sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6/g' include/image.mk
+cp -f ./package/diy/banner ./package/base-files/files/etc/
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 echo "DISTRIB_REVISION='S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
+sed -i 's/by/S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by'"  ./package/base-files/files/etc/banner
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
 #sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
@@ -70,7 +72,6 @@ sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
-cp -f ./package/diy/banner ./package/base-files/files/etc/
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/x64/config-5.4
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
