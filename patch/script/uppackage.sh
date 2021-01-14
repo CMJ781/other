@@ -65,7 +65,7 @@ sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.t
 sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
 echo "DISTRIB_REVISION='Ipv4P S$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 cp -f ./package/diy/banner ./package/base-files/files/etc/
-sed -i 's/by/Ipv4P S$(TZ=UTC-8 date +%Y.%m.%d) by'  ./package/base-files/files/etc/banner
+sed -i 's/by/Ipv4P S$(TZ=UTC-8 date +%Y.%m.%d) by/g'  ./package/base-files/files/etc/banner
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
 #sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv4P by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
