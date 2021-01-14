@@ -57,7 +57,7 @@ sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6/g' inclu
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 echo "DISTRIB_REVISION='Ipv6 S$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
-sed -i 's/by/Ipv6 S$(TZ=UTC-8 date +%Y.%m.%d) by'  ./package/base-files/files/etc/banner
+sed -i 's/by/Ipv6 S$(TZ=UTC-8 date +%Y.%m.%d) by/g'  ./package/base-files/files/etc/banner
 #aa=`grep DISTRIB_DESCRIPTION package/base-files/files/etc/openwrt_release | awk -F"'" '{print $2}'`
 #sed -i "s/${aa}/${aa}-$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by Sirpdboy/g" package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${aa}-S$(TZ=UTC-8 date +%Y.%m.%d) Ipv6 by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
