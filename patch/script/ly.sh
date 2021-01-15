@@ -36,8 +36,7 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata ./feeds/packag
 rm -rf ./feeds/packages/net/mwan3 && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy && \
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
-#rm -rf package/lean/luci-app-baidupcs-web 
+#svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 
 #rm -rf ./package/diy/autocore
 #rm -rf ./package/diy/default-settings
@@ -57,7 +56,7 @@ sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-ap
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 cp -f ./package/diy/banner ./package/base-files/files/etc/
-date1='Ipv6-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
+date1='S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(VERSION_DIST_SANITIZED) ${date1}/g' include/image.mk
 echo "DISTRIB_REVISION='${date1} by Siropboy'" > ./package/base-files/files/etc/openwrt_release1
 echo ' %D '${date1}' by Siropboy ' >> ./package/base-files/files/etc/banner
