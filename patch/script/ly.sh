@@ -59,7 +59,7 @@ sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.t
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='Ipv6-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(VERSION_DIST_SANITIZED) ${date1}/g' include/image.mk
-echo "DISTRIB_REVISION='${date1} by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
+echo "DISTRIB_REVISION='${date1} by Siropboy'" > ./package/base-files/files/etc/openwrt_release1
 echo ' %D '${date1}' by Siropboy ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
