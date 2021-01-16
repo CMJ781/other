@@ -63,11 +63,10 @@ sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/fami
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='Ipv4-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
-sed -i 's/$(VERSION_DIST_SANITIZED)/$(VERSION_DIST_SANITIZED)-${date1}/g' include/image.mk
 echo "DISTRIB_REVISION='${date1} by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 echo ' %D '${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
-#sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P/g' include/image.mk
+sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P/g' include/image.mk
 #sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
 #echo "DISTRIB_REVISION='Ipv4P S$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 #cp -f ./package/diy/banner ./package/base-files/files/etc/
