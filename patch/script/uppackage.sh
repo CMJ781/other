@@ -64,7 +64,7 @@ sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.t
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='Ipv4-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 echo "DISTRIB_REVISION='${date1} by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
-echo ' %D '${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
+echo ${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P/g' include/image.mk
 #sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
