@@ -57,10 +57,11 @@ sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/fami
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
-sed -i 's/$(VERSION_DIST_SANITIZED)/$(VERSION_DIST_SANITIZED) ${date1}/g' include/image.mk
+sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)/g' include/image.mk
 echo "DISTRIB_REVISION='${date1} by Siropboy'" > ./package/base-files/files/etc/openwrt_release1
-echo ' %D '${date1}' by Siropboy ' >> ./package/base-files/files/etc/banner
+echo ${date1}' by Siropboy ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
+
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 #sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
@@ -92,7 +93,7 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 #  rm -rf package/lean/luci-lib-docker
 #  rm -rf package/lean/luci-app-diskman
 #  rm -rf package/lean/parted
-rm -rf package/diy/luci-app-dockerman
-rm -rf package/diy/luci-lib-docker
+#  rm -rf package/diy/luci-app-dockerman
+#  rm -rf package/diy/luci-lib-docker
 
 ./scripts/feeds update -i
