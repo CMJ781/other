@@ -1,31 +1,13 @@
 #!/bin/bash
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
-rm -rf ./package/lean/luci-theme-argon
-rm -rf ./package/lean/trojan
-rm -rf ./package/lean/v2ray
-rm -rf ./package/lean/v2ray-plugin
-rm -rf ./package/lean/xray
-rm -rf ./package/lean/luci-theme-opentomcat
+#rm -rf ./package/lean/luci-theme-argon
+#rm -rf ./package/lean/trojan
+#rm -rf ./package/lean/v2ray
+#rm -rf ./package/lean/v2ray-plugin
+#rm -rf ./package/lean/xray
+#rm -rf ./package/lean/luci-theme-opentomcat
 # echo '替换aria2'
-rm -rf feeds/luci/applications/luci-app-aria2 && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
-rm -rf feeds/packages/net/aria2 && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/aria2 feeds/packages/net/aria2
-rm -rf feeds/packages/net/ariang && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ariang feeds/packages/net/ariang
-# echo '替换transmission'
-rm -rf feeds/luci/applications/luci-app-transmission && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-transmission feeds/luci/applications/luci-app-transmission
-rm -rf feeds/packages/net/transmission && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission feeds/packages/net/transmission
-rm -rf feeds/packages/net/transmission-web-control && \
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission-web-control feeds/packages/net/transmission-web-control
-# echo 'qBittorrent'
-rm -rf package/lean/luci-app-qbittorrent
-rm -rf package/lean/qt5 #5.1.3
-rm -rf package/lean/qBittorrent #4.2.3
-sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/diy/luci-app-qbittorrent/Makefile
 echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns&& \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
@@ -71,16 +53,15 @@ echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/et
 #echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 #svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
-git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
+#git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
 #git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 #git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
-# sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
-# sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/diy/luci-app-openclash
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+#svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 # rm -rf ./package/diy1/trojan
 # rm -rf ./package/diy1/v2ray
 # rm -rf ./package/diy1/v2ray-plugin
