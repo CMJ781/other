@@ -48,14 +48,17 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/d
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
-svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk/ ./package/diy/luci-app-jd-dailybonus
+git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
+git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
+svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
 # sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 #  rm -rf ./package/diy1/trojan
 #  rm -rf ./package/diy1/v2ray
 #  rm -rf ./package/diy1/v2ray-plugin
