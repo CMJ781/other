@@ -23,8 +23,8 @@ rm -rf feeds/packages/net/transmission-web-control && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission-web-control feeds/packages/net/transmission-web-control
 # echo 'qBittorrent'
 rm -rf package/lean/luci-app-qbittorrent
-rm -rf package/lean/qt5 #5.1.3
-rm -rf package/lean/qBittorrent #4.2.3
+rm -rf package/lean/qt5
+rm -rf package/lean/qBittorrent
 sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/diy/luci-app-qbittorrent/Makefile
 echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns&& \
@@ -65,8 +65,16 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 #sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
-echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/x64/config-5.4
+
+sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
+sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
 echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
