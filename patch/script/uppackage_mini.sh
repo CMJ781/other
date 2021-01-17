@@ -46,6 +46,16 @@ sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.t
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
+
+sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
+sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd  package/diy/luci-app-bandwidthd
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
