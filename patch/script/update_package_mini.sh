@@ -16,6 +16,7 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata ./feeds/packag
 rm -rf ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy
+svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
@@ -43,22 +44,22 @@ echo ' --------------------------------' >> ./package/base-files/files/etc/banne
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 # sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
-sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
-sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
+# sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
+# sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
 # echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
+# echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
-git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
-git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
+#git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+#git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
