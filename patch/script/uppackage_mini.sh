@@ -57,12 +57,12 @@ echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd  package/diy/luci-app-bandwidthd
+# git clone https://github.com/AlexZhuo/luci-app-bandwidthd  package/diy/luci-app-bandwidthd
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
-git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
-git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
+# git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+# git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
