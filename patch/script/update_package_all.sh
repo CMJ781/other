@@ -75,8 +75,8 @@ echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
-git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
-git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
+#git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+#git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
