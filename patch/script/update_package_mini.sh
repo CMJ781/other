@@ -49,10 +49,10 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 # echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
-# echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
-# echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
-# echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
-# echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
+echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
@@ -60,7 +60,7 @@ git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 #git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+#svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
 # sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
