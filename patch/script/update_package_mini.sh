@@ -43,10 +43,10 @@ echo ${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
 echo ' --------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
-# sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
-# sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
-# sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
-# echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
+sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
+sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
+sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
+echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
