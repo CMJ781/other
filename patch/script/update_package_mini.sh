@@ -57,7 +57,7 @@ echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/et
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
-git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
+# git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 #git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 #svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
