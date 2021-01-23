@@ -42,6 +42,8 @@ echo ' --------------------------------' >> ./package/base-files/files/etc/banne
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P-Mini/g' include/image.mk
 #sed -i 's/by/Ipv4P Mini S$(TZ=UTC-8 date +%Y.%m.%d) by/g'  ./package/base-files/files/etc/banner
 #echo "DISTRIB_REVISION='Ipv4P Mini S$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1 
+rm -rf package/lean/luci-app-samba4 &&/
+sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
