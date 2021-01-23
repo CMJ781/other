@@ -33,6 +33,8 @@ sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowof
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
+rm -rf package/lean/luci-app-samba4 &&/
+sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6-Mini/g' include/image.mk
 cp -f ./package/diy/banner ./package/base-files/files/etc/
