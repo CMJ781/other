@@ -60,7 +60,8 @@ sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowof
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
-rm -rf package/lean/luci-app-samba4 &&/
+#rm -rf package/lean/luci-app-samba4
+rm -rf ./package/diy/luci-app-samba4
 sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 cp -f ./package/diy/banner ./package/base-files/files/etc/
@@ -81,15 +82,15 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 
-sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
-sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
+#sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
+#sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
 # echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 
