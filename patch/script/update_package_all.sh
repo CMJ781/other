@@ -85,6 +85,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #git clone https://github.com/AlexZhuo/luci-app-bandwidthd /package/diy/luci-app-bandwidthd
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
+svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 # sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
@@ -103,5 +104,5 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 #  rm -rf package/lean/parted
 rm -rf package/diy/luci-app-dockerman
 rm -rf package/diy/luci-lib-docker
-rm -rf package/diy/vssr
+#rm -rf package/diy/vssr
 ./scripts/feeds update -i
