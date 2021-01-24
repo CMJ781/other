@@ -49,7 +49,7 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
 sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
-echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
