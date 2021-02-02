@@ -7,6 +7,8 @@
 # rm -rf ./package/lean/v2ray-plugin
 # rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
+rm -rf ./package/lean/ddns-scripts_aliyun
+rm -rf ./package/lean/ddns-scripts_dnspod
 # echo '替换aria2'
 rm -rf feeds/luci/applications/luci-app-aria2 && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-aria2 feeds/luci/applications/luci-app-aria2
