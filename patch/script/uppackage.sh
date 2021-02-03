@@ -46,6 +46,13 @@ svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./fe
 #sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
+rm -rf ./package/lean/automount
+rm -rf ./package/lean/autosamba
+rm -rf ./package/lean/luci-app-cpufreq
+rm -rf ./package/lean/luci-app-ipsec-vpnd
+rm -rf ./package/lean/luci-app-wrtbwmon
+rm -rf ./package/lean/samba4
+rm -rf ./package/lean/shadowsocksr-libev
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
@@ -99,8 +106,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd ./package/diy/luci-app-bandwidthd
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
-sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
-sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 #git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
