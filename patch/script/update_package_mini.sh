@@ -25,6 +25,13 @@ rm -rf ./package/diy/mwan3
 #rm -rf ./package/diy/default-settings
 rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
+rm -rf ./package/lean/automount
+rm -rf ./package/lean/autosamba
+rm -rf ./package/lean/luci-app-cpufreq
+rm -rf ./package/lean/luci-app-ipsec-vpnd
+rm -rf ./package/lean/luci-app-wrtbwmon
+rm -rf ./package/lean/samba4
+rm -rf ./package/lean/shadowsocksr-libev
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
 #curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
