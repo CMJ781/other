@@ -2,10 +2,6 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 # rm -rf ./package/lean/luci-theme-argon
-# rm -rf ./package/lean/trojan
-# rm -rf ./package/lean/v2ray
-# rm -rf ./package/lean/v2ray-plugin
-# rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./package/lean/ddns-scripts_aliyun
 rm -rf ./package/lean/ddns-scripts_dnspod
@@ -130,6 +126,12 @@ svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
 rm -rf ./package/diy1/v2ray-plugin
+#rm -rf ./package/lean/trojan
+#rm -rf ./package/lean/v2ray
+#rm -rf ./package/lean/v2ray-plugin
+rm -rf package/hw/xray-core
+rm -rf package/diy1/tcping
+#rm -rf package/diy1/xray-core
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
