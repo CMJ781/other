@@ -47,7 +47,7 @@ rm -rf ./package/lean/luci-app-cpufreq
 rm -rf ./package/lean/luci-app-ipsec-vpnd
 rm -rf ./package/lean/luci-app-wrtbwmon
 rm -rf ./package/lean/samba4
-rm -rf ./package/lean/shadowsocksr-libev
+rm -rf ./package/diy/shadowsocksr-libev
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
@@ -86,6 +86,8 @@ echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
 echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
+sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
