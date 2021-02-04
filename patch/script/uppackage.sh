@@ -46,12 +46,12 @@ svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./fe
 #sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
-rm -rf ./package/lean/automount
-rm -rf ./package/lean/autosamba
+rm -rf ./package/diy/automount
+rm -rf ./package/diy/autosamba
 rm -rf ./package/lean/luci-app-cpufreq
 rm -rf ./package/lean/luci-app-ipsec-vpnd
 rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/lean/samba4
+rm -rf ./package/diy/samba4
 rm -rf ./package/lean/luci-app-samba4
 #rm -rf ./package/diy/luci-app-samba4
 #rm -rf ./package/diy/autocore
@@ -76,7 +76,7 @@ cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='Ipv4-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 echo "DISTRIB_REVISION='${date1} by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 echo ${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
-echo ' --------------------------------' >> ./package/base-files/files/etc/banner
+echo '---------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv4P/g' include/image.mk
 #sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
 #echo "DISTRIB_REVISION='Ipv4P S$(TZ=UTC-8 date +%Y.%m.%d) by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
