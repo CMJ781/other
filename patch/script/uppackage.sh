@@ -25,10 +25,10 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission feeds/pac
 rm -rf feeds/packages/net/transmission-web-control && \
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/transmission-web-control feeds/packages/net/transmission-web-control
 # echo 'qBittorrent'
+sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/lean/luci-app-qbittorrent/Makefile
 rm -rf package/lean/luci-app-qbittorrent
 rm -rf package/lean/qt5 #5.1.3
 rm -rf package/lean/qBittorrent #4.2.3
-sed -i 's/+qbittorrent/+qbittorrent +python3/g' ./package/diy/luci-app-qbittorrent/Makefile
 # echo '替换smartdns'
 rm -rf ./feeds/packages/net/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./feeds/packages/net/smartdns
