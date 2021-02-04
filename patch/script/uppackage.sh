@@ -54,7 +54,6 @@ rm -rf ./package/lean/luci-app-wrtbwmon
 rm -rf ./package/lean/samba4
 rm -rf ./package/lean/luci-app-samba4
 #rm -rf ./package/diy/luci-app-samba4
-rm -rf ./package/diy/shadowsocksr-libev
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
