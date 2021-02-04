@@ -2,9 +2,6 @@
 #=================================================
 # Description: Build OpenWrt using GitHub Actions
 rm -rf ./package/lean/luci-theme-argon
-#rm -rf ./package/lean/trojan
-#rm -rf ./package/lean/v2ray
-#rm -rf ./package/lean/v2ray-plugin
 rm -rf ./package/lean/luci-theme-opentomcat
 
 rm -rf ./package/lean/ddns-scripts_aliyun
@@ -89,6 +86,12 @@ sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
 
+#rm -rf ./package/lean/trojan
+#rm -rf ./package/lean/v2ray
+#rm -rf ./package/lean/v2ray-plugin
+rm -rf package/hw/xray-core
+rm -rf package/diy1/tcping
+#rm -rf package/diy1/xray-core
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
 rm -rf ./package/diy1/v2ray-plugin
