@@ -112,9 +112,9 @@ git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./
 #bypass
 git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
-git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
-sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
-sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
+#git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+#sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
+#sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app-ttnode
 # svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
 # svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ package/diy/lienol
