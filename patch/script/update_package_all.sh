@@ -5,7 +5,6 @@ rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
-rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./package/lean/ddns-scripts_aliyun
 rm -rf ./package/lean/ddns-scripts_dnspod
@@ -41,13 +40,14 @@ rm -rf ./feeds/packages/net/https-dns-proxy
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 #rm -rf ./package/diy/autocore
 #rm -rf ./package/diy/default-settings
-rm -rf ./package/lean/automount
-rm -rf ./package/lean/autosamba
-rm -rf ./package/lean/luci-app-cpufreq
-rm -rf ./package/lean/luci-app-ipsec-vpnd
+rm -rf ./package/diy/automount
+rm -rf ./package/diy/autosamba
+rm -rf ./package/diy/luci-app-cpufreq
+rm -rf ./package/diy/luci-app-ipsec-vpnd
 rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/lean/samba4
-rm -rf ./package/diy/shadowsocksr-libev
+rm -rf ./package/diy/samba4
+#rm -rf package/lean/luci-app-samba4
+rm -rf ./package/diy/luci-app-samba4
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
@@ -67,9 +67,7 @@ date1='Ipv6-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6/g' include/image.mk
 echo "DISTRIB_REVISION='${date1} by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 echo ${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
-echo ' --------------------------------' >> ./package/base-files/files/etc/banner
-#rm -rf package/lean/luci-app-samba4
-rm -rf ./package/diy/luci-app-samba4
+echo '---------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
