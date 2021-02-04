@@ -34,11 +34,11 @@ rm -rf ./package/lean/samba4
 rm -rf ./package/diy/shadowsocksr-libev
 #rm -rf package/lean/luci-app-samba4
 rm -rf ./package/lean/luci-app-samba4
-#curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
-#curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
-#curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
+#curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
+#curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
+#curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
+curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
+curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.luased -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
@@ -56,6 +56,7 @@ echo ' --------------------------------' >> ./package/base-files/files/etc/banne
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
+#内核 设置
 #sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
 #sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
 #echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
@@ -65,6 +66,7 @@ sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 #echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
 #echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
 #echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
