@@ -52,7 +52,9 @@ rm -rf ./package/lean/luci-app-cpufreq
 rm -rf ./package/lean/luci-app-ipsec-vpnd
 rm -rf ./package/lean/luci-app-wrtbwmon
 rm -rf ./package/lean/samba4
-rm -rf ./package/lean/shadowsocksr-libev
+rm -rf package/lean/luci-app-samba4
+#rm -rf ./package/diy/luci-app-samba4
+rm -rf ./package/diy/shadowsocksr-libev
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
@@ -69,8 +71,6 @@ sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowof
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
-#rm -rf package/lean/luci-app-samba4
-rm -rf ./package/diy/luci-app-samba4
 sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 cp -f ./package/diy/banner ./package/base-files/files/etc/
@@ -106,6 +106,9 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd ./package/diy/luci-app-bandwidthd
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
+
+sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
+sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 #git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
