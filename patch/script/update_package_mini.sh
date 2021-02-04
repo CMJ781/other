@@ -31,7 +31,9 @@ rm -rf ./package/lean/luci-app-cpufreq
 rm -rf ./package/lean/luci-app-ipsec-vpnd
 rm -rf ./package/lean/luci-app-wrtbwmon
 rm -rf ./package/lean/samba4
-rm -rf ./package/lean/shadowsocksr-libev
+rm -rf ./package/diy/shadowsocksr-libev
+#rm -rf package/lean/luci-app-samba4
+rm -rf ./package/lean/luci-app-samba4
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
 #curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
 #curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
@@ -42,8 +44,6 @@ sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowof
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
-#rm -rf package/lean/luci-app-samba4
-rm -rf ./package/diy/luci-app-samba4
 sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6-Mini/g' include/image.mk
@@ -68,6 +68,9 @@ sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
+#bypass
+sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
+sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 # git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 #git clone https://github.com/BCYDTZ/luci-app-UUGameAcc.git package/diy/luci-app-UUGameAcc
