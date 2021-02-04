@@ -76,7 +76,7 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/d
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
 #bypass
-git clone -b master --single-branch https://github.com/fw876/helloworld ./package/helloworld
+git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
 sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
