@@ -87,11 +87,6 @@ echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/et
 #echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
 #echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
 #echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
-#bypass
-sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
-sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
-git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
-
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 #luci-app-jd-dailybonus
 rm -rf package/lean/luci-app-jd-dailybonus
@@ -101,7 +96,12 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #git clone https://github.com/AlexZhuo/luci-app-bandwidthd /package/diy/luci-app-bandwidthd
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
+#bypass
+git clone -b master --single-branch https://github.com/fw876/helloworld ./package/helloworld
 svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
+git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
+sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app-ttnode
 # sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
@@ -114,7 +114,6 @@ svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app
 #  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
 #  cd package/diy/po2lmo
 #  make && sudo make install
-
 #  rm -rf package/lean/luci-app-dockerman
 #  rm -rf package/lean/luci-lib-docker
 #  rm -rf package/lean/luci-app-diskman
