@@ -52,12 +52,12 @@ rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
 rm -rf ./package/lean/default-settings
-#curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
-#curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
-#curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
-curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
-sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
+
+#curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
+#curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
+#curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
+curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
+curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.luased -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
@@ -77,19 +77,24 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 #sed -i 's/tables=1/tables=0/g' ./package/kernel/linux/files/sysctl-br-netfilter.conf
 echo  "        option tls_enable 'true'" >> ./package/lean/luci-app-frpc/root/etc/config/frp
 # sed -i '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
-sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
-sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
-echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
-echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+#内核设置
+##sed -i '/CONFIG_NVME_MULTIPATH /d' ./package/target/linux/x86/config-5.4
+#sed -i '/CONFIG_NVME_TCP /d' ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_BINFMT_MISC=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_EXTRA_FIRMWARE="i915/kbl_dmc_ver1_04.bin"'   >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_EXTRA_FIRMWARE_DIR="/lib/firmware"'  >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_FABRICS=y'  >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_FC=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_MULTIPATH=y' >> ./package/target/linux/x86/config-5.4
+#echo  'CONFIG_NVME_TCP=y' >> ./package/target/linux/x86/config-5.4
+#bypass
 sed -i 's/shadowsocksr-libev-alt/shadowsocksr-libev-ssr-redir/g' package/*/*/Makefile
 sed -i 's/shadowsocksr-libev-server/shadowsocksr-libev-ssr-server/g' package/*/*/Makefile
 git clone https://github.com/garypang13/luci-app-bypass.git package/diy/luci-app-bypass
+
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
+#luci-app-jd-dailybonus
+rm -rf package/lean/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
