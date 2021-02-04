@@ -5,7 +5,6 @@ rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/trojan
 rm -rf ./package/lean/v2ray
 rm -rf ./package/lean/v2ray-plugin
-rm -rf ./package/lean/xray
 rm -rf ./package/lean/luci-theme-opentomcat
 rm -rf ./feeds/packages/net/smartdns
 rm -rf ./package/lean/ddns-scripts_aliyun
@@ -31,7 +30,6 @@ rm -rf ./package/lean/luci-app-cpufreq
 rm -rf ./package/lean/luci-app-ipsec-vpnd
 rm -rf ./package/lean/luci-app-wrtbwmon
 rm -rf ./package/lean/samba4
-rm -rf ./package/diy/shadowsocksr-libev
 #rm -rf package/lean/luci-app-samba4
 rm -rf ./package/lean/luci-app-samba4
 #curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
@@ -52,7 +50,7 @@ date1='Ipv6-Mini-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(VERSION_DIST_SANITIZED)-${date1}/g' include/image.mk
 echo "DISTRIB_REVISION='${date1} by Sirpdboy'" > ./package/base-files/files/etc/openwrt_release1
 echo ${date1}' by Sirpdboy ' >> ./package/base-files/files/etc/banner
-echo ' --------------------------------' >> ./package/base-files/files/etc/banner
+echo '---------------------------------' >> ./package/base-files/files/etc/banner
 sed -i 's/带宽监控/监控/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' ./package/base-files/files/etc/shadow
 sed -i  '/filter_/d' package/network/services/dnsmasq/files/dhcp.conf
