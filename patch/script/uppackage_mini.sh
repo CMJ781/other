@@ -22,11 +22,7 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/https-dns-proxy ./feed
 
 rm -rf ./package/lean/automount
 rm -rf ./package/lean/autosamba
-rm -rf ./package/lean/luci-app-cpufreq
-rm -rf ./package/lean/luci-app-ipsec-vpnd
-rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/lean/samba4
-rm -rf ./package/lean/luci-app-samba4
+#rm -rf ./package/lean/luci-app-cpufreq
 #rm -rf ./package/diy/luci-app-samba4
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
@@ -97,9 +93,9 @@ rm -rf package/diy1/tcping
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
 rm -rf ./package/diy1/v2ray-plugin
-#  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-#  cd package/diy/po2lmo
-#  make && sudo make install
+git clone https://github.com/openwrt-dev/po2lmo.git po2lmo
+cd po2lmo
+make && sudo make install
 rm -rf package/diy/luci-app-dockerman
 rm -rf package/diy/luci-lib-docker
 
