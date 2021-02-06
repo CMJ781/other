@@ -30,14 +30,10 @@ rm -rf ./feeds/packages/net/mwan3 && svn co https://github.com/sirpdboy/sirpdboy
 rm -rf ./feeds/packages/net/https-dns-proxy  && svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 #rm -rf ./package/diy/autocore
 #rm -rf ./package/diy/default-settings
-rm -rf ./package/diy/automount
-rm -rf ./package/diy/autosamba
-rm -rf ./package/diy/luci-app-cpufreq
-rm -rf ./package/diy/luci-app-ipsec-vpnd
+rm -rf ./package/lean/automount
+rm -rf ./package/lean/autosamba
+#rm -rf ./package/diy/luci-app-cpufreq
 rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/diy/samba4
-#rm -rf package/lean/luci-app-samba4
-rm -rf ./package/diy/luci-app-samba4
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
@@ -106,8 +102,6 @@ svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app
 #  rm -rf package/lean/luci-lib-docker
 #  rm -rf package/lean/luci-app-diskman
 #  rm -rf package/lean/parted
-rm -rf package/diy/luci-app-dockerman
-rm -rf package/diy/luci-lib-docker
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 #rm -rf package/diy1/xray-core
