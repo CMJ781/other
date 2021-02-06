@@ -15,8 +15,8 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata ./feeds/packag
 rm -rf ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
-cp -f ./package/diy/banner ./package/base-files/files/etc/
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/https-dns-proxy ./feeds/packages/net/https-dns-proxy
+
 rm -rf ./package/lean/automount
 rm -rf ./package/lean/autosamba
 rm -rf ./package/lean/luci-app-cpufreq
@@ -28,7 +28,7 @@ rm -rf ./package/lean/luci-app-samba4
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
-rm -rf ./package/diy/default-settings
+rm -rf ./package/lean/default-settings
 rm -rf ./package/lean/autocore
 #rm -rf ./package/lean/default-settings
 #curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
@@ -70,8 +70,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 # curl -fsSL https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf >  ./package/new/smartdns/conf/anti-ad-smartdns.conf
 # git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
-rm -rf package/lean/luci-app-jd-dailybonus &&/
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
+rm -rf package/lean/luci-app-jd-dailybonus && git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
