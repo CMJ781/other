@@ -3,9 +3,11 @@
 # Description: Build OpenWrt using GitHub Actions
 rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/luci-theme-opentomcat
-rm -rf ./feeds/packages/net/smartdns
 rm -rf ./package/lean/ddns-scripts_aliyun
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_aliyun./package/lean/ddns-scripts_aliyun
 rm -rf ./package/lean/ddns-scripts_dnspod
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_dnspod ./package/lean/ddns-scripts_dnspod
+rm -rf ./feeds/packages/net/smartdns
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/diy/smartdns
 rm -rf ./package/lean/luci-app-netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata ./package/lean/luci-app-netdata
@@ -14,7 +16,7 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata ./feeds/packag
 rm -rf ./feeds/packages/net/mwan3
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/mwan3 ./feeds/packages/net/mwan3
 rm -rf ./feeds/packages/net/https-dns-proxy
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./feeds/packages/net/https-dns-proxy
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/https-dns-proxy ./feeds/packages/net/https-dns-proxy
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
@@ -33,7 +35,7 @@ rm -rf ./package/lean/luci-app-samba4
 #curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
 #curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
-curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.luased -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
+curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 sed -i 's/网络存储/存储/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/Turbo ACC 网络加速/ACC网络加速/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
