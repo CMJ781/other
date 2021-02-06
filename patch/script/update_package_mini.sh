@@ -26,11 +26,6 @@ rm -rf ./package/lean/default-settings
 rm -rf ./package/lean/automount
 rm -rf ./package/lean/autosamba
 rm -rf ./package/lean/luci-app-cpufreq
-rm -rf ./package/lean/luci-app-ipsec-vpnd
-rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/lean/samba4
-#rm -rf package/lean/luci-app-samba4
-rm -rf ./package/lean/luci-app-samba4
 #curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/x86/index.htm > package/lean/autocore/files/x86/index.htm
 #curl -fsSL https://raw.githubusercontent.com/loso3000/other/master/patch/autocore/files/arm/index.htm > package/lean/autocore/files/arm/index.htm
 #curl -fsSL  https://raw.githubusercontent.com/loso3000/other/master/patch/default-settings/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
@@ -92,11 +87,9 @@ rm -rf ./package/lean/v2ray-plugin
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 #rm -rf package/diy1/xray-core
-#  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-#  cd package/diy/po2lmo
-#  make && sudo make install
-rm -rf package/diy/luci-app-dockerman
-rm -rf package/diy/luci-lib-docker
+git clone https://github.com/openwrt-dev/po2lmo.git 
+cd po2lmo
+make && sudo make install
 #rm -rf package/diy/vssr
 
 ./scripts/feeds update -i
