@@ -44,13 +44,9 @@ svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy ./fe
 #sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 #sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
-rm -rf ./package/diy/automount
-rm -rf ./package/diy/autosamba
-rm -rf ./package/lean/luci-app-cpufreq
-rm -rf ./package/lean/luci-app-ipsec-vpnd
-rm -rf ./package/lean/luci-app-wrtbwmon
-rm -rf ./package/lean/samba4
-rm -rf ./package/lean/luci-app-samba4
+rm -rf ./package/lean/automount
+rm -rf ./package/lean/autosamba
+#rm -rf ./package/lean/luci-app-cpufreq
 #rm -rf ./package/diy/luci-app-samba4
 #rm -rf ./package/diy/autocore
 rm -rf ./package/diy/netdata
@@ -135,9 +131,9 @@ rm -rf ./package/diy1/v2ray-plugin
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 #rm -rf package/diy1/xray-core
-#  git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-#  cd package/diy/po2lmo
-#  make && sudo make install
+git clone https://github.com/openwrt-dev/po2lmo.git po2lmo
+cd po2lmo
+make && sudo make install
 # rm -rf package/diy/luci-app-dockerman
 # rm -rf package/diy/luci-lib-docker
 
