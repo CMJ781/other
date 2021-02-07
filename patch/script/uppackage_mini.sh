@@ -3,8 +3,6 @@
 # Description: Build OpenWrt using GitHub Actions
 rm -rf ./package/lean/luci-theme-argon
 rm -rf ./package/lean/luci-theme-opentomcat
-
-
 rm -rf ./package/lean/ddns-scripts_aliyun
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/ddns-scripts_aliyun./package/lean/ddns-scripts_aliyun
 rm -rf ./package/lean/ddns-scripts_dnspod
@@ -83,7 +81,6 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 #sed -i "/mediaurlbase/d" package/*/luci-theme*/root/etc/uci-defaults/*
 #sed -i "/mediaurlbase/d" feed/*/luci-theme*/root/etc/uci-defaults/*
-
 #rm -rf ./package/lean/trojan
 #rm -rf ./package/lean/v2ray
 #rm -rf ./package/lean/v2ray-plugin
@@ -93,8 +90,4 @@ rm -rf package/diy1/tcping
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
 rm -rf ./package/diy1/v2ray-plugin
-git clone https://github.com/openwrt-dev/po2lmo.git
-cd po2lmo
-make && sudo make install
-cd ../
 ./scripts/feeds update -i
