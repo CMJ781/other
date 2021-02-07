@@ -95,15 +95,12 @@ svn co https://github.com/jerrykuku/luci-app-ttnode/trunk/  package/diy/luci-app
 # rm -rf ./package/diy1/trojan
 # rm -rf ./package/diy1/v2ray
 # rm -rf ./package/diy1/v2ray-plugin
-git clone https://github.com/openwrt-dev/po2lmo.git package/diy/po2lmo
-cd po2lmo
-make && sudo make install
-#  rm -rf package/lean/luci-app-dockerman
-#  rm -rf package/lean/luci-lib-docker
-#  rm -rf package/lean/luci-app-diskman
 #  rm -rf package/lean/parted
 rm -rf package/hw/xray-core
 rm -rf package/diy1/tcping
 #rm -rf package/diy1/xray-core
 #rm -rf package/diy/vssr
 ./scripts/feeds update -i
+git clone https://github.com/openwrt-dev/po2lmo.git
+cd po2lmo
+make && sudo make install
