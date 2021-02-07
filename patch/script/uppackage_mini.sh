@@ -93,10 +93,8 @@ rm -rf package/diy1/tcping
 rm -rf ./package/diy1/trojan
 rm -rf ./package/diy1/v2ray
 rm -rf ./package/diy1/v2ray-plugin
-git clone https://github.com/openwrt-dev/po2lmo.git po2lmo
+git clone https://github.com/openwrt-dev/po2lmo.git
 cd po2lmo
 make && sudo make install
-rm -rf package/diy/luci-app-dockerman
-rm -rf package/diy/luci-lib-docker
-
+cd ../
 ./scripts/feeds update -i
