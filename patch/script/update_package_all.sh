@@ -33,7 +33,6 @@ rm -rf ./feeds/packages/net/https-dns-proxy  && svn co https://github.com/Lienol
 rm -rf ./package/lean/automount
 rm -rf ./package/lean/autosamba
 #rm -rf ./package/diy/luci-app-cpufreq
-rm -rf ./package/lean/luci-app-wrtbwmon
 rm -rf ./package/diy/netdata
 rm -rf ./package/diy/mwan3
 rm -rf ./package/lean/autocore
