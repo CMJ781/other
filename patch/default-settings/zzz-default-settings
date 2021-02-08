@@ -36,7 +36,7 @@ sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/autopoweroff.lu
 sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/autotimeset.lua
 sed -i 's/\"network\"/\"control\"/g' /usr/lib/lua/luci/controller/eqos.lua
 sed -i 's/\"system\"/\"control\"/g' /usr/lib/lua/luci/controller/cpulimit.lua
-sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/samba4.lua
+sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/samba4.lua
 sed -i 's/\"nas\"/\"control\"/g' /usr/lib/lua/luci/controller/cifsd.lua
 
 uci set vsftpd.@listen[0].enable4='0'
