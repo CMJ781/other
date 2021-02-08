@@ -64,7 +64,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/diy1
 # git clone https://github.com/garypang13/luci-app-dnsfilter.git package/diy/luci-app-dnsfilter
 git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan ./package/diy/luci-app-serverchan
 git clone -b master --single-branch https://github.com/destan19/OpenAppFilter ./package/diy/OpenAppFilter
-rm -rf ./package/lean/luci-app-jd-dailybonus &&/
+rm -rf ./package/lean/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus
 #bypass
 git clone -b master --single-branch https://github.com/fw876/helloworld ./package/hw
