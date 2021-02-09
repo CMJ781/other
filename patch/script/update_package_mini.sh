@@ -37,6 +37,7 @@ sed -i 's/解锁网易云灰色歌曲/解锁灰色歌曲/g' package/lean/luci-ap
 sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/familycloud.lua
 sed -i 's/invalid/# invalid/g' package/lean/samba4/files/smb.conf.template
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
+sed -i 's/a.default = "0"/a.default = "1"/g' ./package/lean/luci-app-cifsd/luasrc/controller/cifsd.lua
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell TZ=UTC-8 date +%Y%m%d)-Ipv6-Mini/g' include/image.mk
 cp -f ./package/diy/banner ./package/base-files/files/etc/
 date1='Ipv6-Mini-S'`TZ=UTC-8 date +%Y.%m.%d -d +"0"days`
